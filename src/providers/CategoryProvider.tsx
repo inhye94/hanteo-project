@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { ICategory } from "../components/CategorySwiper";
+import type { ICategory } from "../types/category";
 
 interface ICategoryContext {
   swiper: string;

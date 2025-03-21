@@ -1,5 +1,6 @@
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import type { ICategory } from "../types/category";
 import "./CategorySwiper.scss";
 
 /**
@@ -25,11 +26,6 @@ import "./CategorySwiper.scss";
  *  - Item < categories 이면 categories는 넘치는 만큼 생략됩니다.
  *  - Item > categories 이면 categories는 부족한 만큼 'undefined'로 표기됩니다.
  */
-
-export interface ICategory {
-  id: string;
-  text: string;
-}
 
 export interface ICategorySwiperProps {
   children: React.ReactNode;
