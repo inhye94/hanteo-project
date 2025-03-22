@@ -1,6 +1,6 @@
 import type { ICategory } from "../types/category";
 
-export const categories: ICategory[] = [
+export const mockCategories: ICategory[] = [
   { id: "category-1", text: "차트" },
   { id: "category-2", text: "Whook" },
   { id: "category-3", text: "이벤트" },
