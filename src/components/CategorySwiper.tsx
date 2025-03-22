@@ -7,34 +7,18 @@ import "./CategorySwiper.scss";
  * CategorySwiper 컴포넌트
  *
  * 특이사항:
- * 1. Pagenation 컴포넌트와 매칭
- *  - CategorySwiper의 pagenation props = Pagenation의 swiper props
- *  - 예시
- *    <Pagenation swiper="example-slider" />
- *    <CategorySwiper categories={...} pagenation="example-slider"
- *      {...}
- *    </CategorySwiper>
- * 2. CCP 패턴
- *  - Item의 내부를 자유롭게 구성할 수 있습니다.
- *  - 예시
- *    <CategorySwiper>
- *      <CategorySwiper.Item>{...}</CategorySwiper.Item>
- *      <CategorySwiper.Item>{...}</CategorySwiper.Item>
- *      <CategorySwiper.Item>{...}</CategorySwiper.Item>
- *    </CategorySwiper>
- * 3. (개수) Item  = categories
- *  - Item < categories 이면 categories는 넘치는 만큼 생략됩니다.
- *  - Item > categories 이면 categories는 부족한 만큼 'undefined'로 표기됩니다.
+ * 1. <Pagenation /> 컴포넌트와 매칭
+ * - `pagenation` props 값은 <Pagination>의 `swiper` 값과 일치해야 정상적으로 연동됩니다.
+ * - <CategoryProvider>를 통해 해당 값을 공유하여 일관된 데이터 관리합니다.
+ * - 외부에서 값을 주입받기 때문에 재사용이 가능합니다.
  */
 
 export interface ICategorySwiperProps {
-  children: React.ReactNode;
   categories: ICategory[];
   pagenation: string;
 }
 
 export default function CategorySwiper({
-  children,
   categories,
   pagenation,
 }: ICategorySwiperProps) {
@@ -49,9 +33,9 @@ export default function CategorySwiper({
         },
       }}
     >
-      {children}
+      {categories.map((category) => (
+        <SwiperSlide key={category.id}>{category.content}</SwiperSlide>
+      ))}
     </Swiper>
   );
 }
-
-CategorySwiper.Item = SwiperSlide;
