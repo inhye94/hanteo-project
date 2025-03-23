@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { ICategory } from "../types/category";
@@ -34,7 +35,17 @@ export default function CategorySwiper({
       }}
     >
       {categories.map((category) => (
-        <SwiperSlide key={category.id}>{category.content}</SwiperSlide>
+        <SwiperSlide key={category.id}>
+          <div
+            css={css`
+              min-height: 30vh;
+              max-height: 60vh;
+              overflow-y: auto;
+            `}
+          >
+            {category.content}
+          </div>
+        </SwiperSlide>
       ))}
     </Swiper>
   );
