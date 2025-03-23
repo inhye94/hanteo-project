@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getMockData } from "../apis/product";
 import Article from "../components/Article";
-import List from "../components/List";
-import ListItem from "../components/ListItem";
+import ChartItem from "../components/ChartItem";
+import ChartList from "../components/ChartList";
 import Loading from "../components/Loading";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import type { IMockData } from "../types/mockData";
@@ -60,10 +60,17 @@ export default function ChartSection() {
 
   return (
     <Article title="실시간 차트">
-      <List>
+      <ChartList>
         {list &&
-          list?.map((item, i) => <ListItem index={i} key={i} product={item} />)}
-      </List>
+          list?.map((item, i) => (
+            <ChartItem
+              index={i}
+              key={i}
+              product={item}
+              onClick={() => alert(123)}
+            />
+          ))}
+      </ChartList>
       <div ref={targetRef}></div>
       {isLoading && <Loading />}
     </Article>

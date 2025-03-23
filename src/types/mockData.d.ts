@@ -3,4 +3,5 @@ export interface IMockData {
   productName: string;
   price: number;
   boughtDate: string;
+  productImg?: string;
 }
