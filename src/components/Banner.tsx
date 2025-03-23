@@ -13,11 +13,9 @@ const BANNER_PAGENATION_NAME = "banner-pagenation";
 const BANNER_PAGENATION_OPTION: PaginationOptions = {
   el: `.${BANNER_PAGENATION_NAME}`,
   clickable: true,
+  bulletActiveClass: "active",
+  bulletElement: "button",
   type: "bullets",
-  renderBullet: function (_, className) {
-    // className이 기본값이 들어가게 필수 설정
-    return '<button type="button" class="' + className + '"></button>';
-  },
 };
 
 interface IBannerProps {
@@ -69,7 +67,7 @@ export default function Banner({ promotions }: IBannerProps) {
               background-color: ${colors.coolNeutral96};
               border-radius: 50%;
 
-              &.swiper-pagination-bullet-active {
+              &.active {
                 background-color: ${colors.pink50};
               }
             }
