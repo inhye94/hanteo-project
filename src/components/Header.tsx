@@ -39,7 +39,7 @@ export default function Header() {
               font-size: 14px;
               transition: color 150ms ease-in-out;
 
-              &.swiper-pagination-bullet-active {
+              &.active {
                 color: ${colors.common100};
               }
             }
