@@ -1,8 +1,14 @@
 import { css } from "@emotion/react";
 
-export default function List({ children }: { children: React.ReactNode }) {
+interface IListProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+export default function ChartList({ children, className }: IListProps) {
   return (
     <ul
+      className={className}
       css={css`
         display: flex;
         flex-direction: column;
