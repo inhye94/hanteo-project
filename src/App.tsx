@@ -1,29 +1,16 @@
-import CategorySwiper from "./components/CategorySwiper";
-import Pagenation from "./components/Pagenation";
-import { useCategory } from "./providers/CategoryProvider";
+import Banner from "./components/Banner";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import { mockPromotions } from "./mocks/mockPromotions";
 
 function App() {
-  const { swiper, categories } = useCategory();
-
   return (
     <>
-      <header>
-        <h1 className="visually-hidden">한터글로벌</h1>
-        <Pagenation swiper={swiper} />
-      </header>
-
-      <main>
-        <CategorySwiper categories={categories} pagenation={swiper}>
-          <CategorySwiper.Item>Slide1</CategorySwiper.Item>
-          <CategorySwiper.Item>Slide2</CategorySwiper.Item>
-          <CategorySwiper.Item>Slide3</CategorySwiper.Item>
-          <CategorySwiper.Item>Slide4</CategorySwiper.Item>
-          <CategorySwiper.Item>Slide5</CategorySwiper.Item>
-          <CategorySwiper.Item>Slide6</CategorySwiper.Item>
-        </CategorySwiper>
-      </main>
-
-      <footer>푸터 영역</footer>
+      <Header />
+      <Banner promotions={mockPromotions} />
+      <Main />
+      <Footer />
     </>
   );
 }
