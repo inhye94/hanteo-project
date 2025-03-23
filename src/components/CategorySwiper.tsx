@@ -1,7 +1,6 @@
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { ICategory } from "../types/category";
-import "./CategorySwiper.scss";
 
 /**
  * CategorySwiper 컴포넌트
@@ -28,6 +27,7 @@ export default function CategorySwiper({
       pagination={{
         el: `.${pagenation}`,
         clickable: true,
+        bulletActiveClass: "active",
         renderBullet: (index, className) => {
           return `<button type="button" class="${className} custom-bullet">${categories[index]?.text}</button>`;
         },
