@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getMockData } from "../apis/product";
+import Article from "../components/Article";
+import List from "../components/List";
+import ListItem from "../components/ListItem";
+import Loading from "../components/Loading";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import type { IMockData } from "../types/mockData";
-import Article from "./Article";
-import List from "./List";
-import ListItem from "./ListItem";
-import Loading from "./Loading";
 
-export default function ChartSection() {
+export default function NewsSection() {
   const [list, setList] = useState<IMockData[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [pageNum, setPageNum] = useState<number>(0);
@@ -59,7 +59,7 @@ export default function ChartSection() {
   }, [pageNum]);
 
   return (
-    <Article title="콘텐츠 큐레이션 제목">
+    <Article title="뉴스">
       <List>
         {list &&
           list?.map((item, i) => <ListItem index={i} key={i} product={item} />)}
