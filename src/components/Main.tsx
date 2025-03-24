@@ -12,6 +12,7 @@ export default function Main() {
       <div
         css={css`
           background-color: ${colors.coolNeutral97};
+          min-height: 65vh;
         `}
       >
         <Container>

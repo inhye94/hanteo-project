@@ -71,4 +71,5 @@ const ImageBox = styled.div`
 
 const TextBox = styled.div`
   flex-grow: 1;
+  padding: 8px;
 `;

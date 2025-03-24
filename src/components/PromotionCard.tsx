@@ -1,9 +1,8 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { breakpoints } from "../constants/breakpoints";
 import { colors } from "../constants/colors";
 import type { IPromotionType } from "../types/promotion";
-import Badge from "./Badge";
+import Badge from "./atoms/Badge";
 
 export default function PromotionCard({
   promotion,
@@ -20,21 +19,14 @@ export default function PromotionCard({
         />
       )}
       <TextBox>
-        <div
-          css={css`
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 4px;
-          `}
-        >
+        <TitleWrapper>
           <PromotionTitle>{promotion.title}</PromotionTitle>
           {promotion.action && (
             <Badge variant="outlined" shape="pill" size={10}>
               {promotion.action}
             </Badge>
           )}
-        </div>
+        </TitleWrapper>
         <PromotionDate>{promotion.period}</PromotionDate>
       </TextBox>
       <ImageBox>
@@ -75,6 +67,13 @@ const TextBox = styled.header`
   @media screen and (min-width: ${breakpoints.lg}px) {
     padding: 16px;
   }
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
 `;
 
 const PromotionTitle = styled.h3`
