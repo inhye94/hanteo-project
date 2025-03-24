@@ -1,6 +1,20 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useIntersectionObserver } from "./useIntersectionObserver";
 
+/**
+ * useInfiniteScroll 훅
+ *
+ * 특이사항:
+ * 1. useIntersectionObserver 훅 사용
+ * - 특정 요소가 화면에 보일 때 콜백 함수 실행
+ * 2. 재사용성
+ * - fetchData 함수를 외부로부터 주입받습니다.
+ * 3. { list, isLoading, targetRef }를 제공
+ * - list: fetching된 데이터
+ * - isLoading: pending 상태
+ * - targetRef: observe 대상
+ */
+
 interface UseInfiniteScrollProps<T> {
   fetchData: (page: number) => Promise<{ datas: T[]; isEnd: boolean }>;
 }
