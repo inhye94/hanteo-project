@@ -1,0 +1,63 @@
+@use "../colors.scss";
+
+.badge {
+  display: inline-block;
+  min-width: 40px;
+  font-weight: 900;
+  letter-spacing: 0.02rem;
+  text-align: center;
+}
+
+// variant
+.badge-variant-filled {
+  color: colors.$common-100;
+  background-color: colors.$pink-50;
+}
+
+.badge-variant-outlined {
+  border: 1px solid colors.$pink-50;
+  color: colors.$pink-50;
+}
+
+// shape
+.badge-shape-simple {
+  padding: 2px 4px;
+  border-radius: 4px;
+
+  // size
+  &.badge-size-10 {
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  &.badge-size-12 {
+    padding: 1px 4px;
+    font-size: 12px;
+  }
+
+  &.badge-size-14 {
+    padding: 2px 6px;
+    font-size: 14px;
+  }
+}
+
+.badge-shape-pill {
+  padding: 0 8px;
+  border-radius: 100px;
+
+  // size
+  &.badge-size-10 {
+    font-size: 10px;
+    font-weight: 700;
+  }
+
+  &.badge-size-12 {
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  &.badge-size-14 {
+    padding: 0 12px;
+    font-size: 14px;
+  }
+}

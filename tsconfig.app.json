@@ -29,7 +29,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "strictNullChecks": true,
-    "forceConsistentCasingInFileNames": true // 파일 이름 대소문자 일관성 유지
+    "forceConsistentCasingInFileNames": true, // 파일 이름 대소문자 일관성 유지
+
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src"]
 }
