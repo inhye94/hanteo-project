@@ -7,23 +7,18 @@ import Empty from "../components/Empty";
 import Loading from "../components/Loading";
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
 
-export default function EventSection() {
+export default function StorePage() {
   const { isLoading, list, targetRef } = useInfiniteScroll({
     fetchData: getMockData,
   });
 
   return (
-    <Article title="이벤트">
+    <Article title="스토어">
       {list && list.length === 0 && <Empty />}
       {list && list.length > 0 && (
         <ChartList>
           {list?.map((item, i) => (
-            <ChartItem
-              key={item.productId}
-              product={item}
-              index={i}
-              onClick={() => alert(123)}
-            />
+            <ChartItem key={item.productId} product={item} index={i} />
           ))}
         </ChartList>
       )}

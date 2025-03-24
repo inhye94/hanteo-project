@@ -1,6 +1,6 @@
+import { useCallback } from "react";
 import { getMockData } from "../apis/product";
 import Article from "../components/Article";
-
 import ChartItem from "../components/ChartItem";
 import ChartList from "../components/ChartList";
 import ChartSkeleton from "../components/ChartSkeleton";
@@ -8,13 +8,17 @@ import Empty from "../components/Empty";
 import Loading from "../components/Loading";
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
 
-export default function ChargeSection() {
+export default function ChartPage() {
   const { isLoading, list, targetRef } = useInfiniteScroll({
     fetchData: getMockData,
   });
 
+  const listItemClickHandler = useCallback(() => {
+    alert("클릭이벤트 실행");
+  }, []);
+
   return (
-    <Article title="충전소">
+    <Article title="실시간 차트">
       {list && list.length === 0 && <Empty />}
       {list && list.length > 0 && (
         <ChartList>
@@ -23,7 +27,7 @@ export default function ChargeSection() {
               key={item.productId}
               product={item}
               index={i}
-              onClick={() => alert(123)}
+              onClick={listItemClickHandler}
             />
           ))}
         </ChartList>

@@ -7,23 +7,18 @@ import Empty from "../components/Empty";
 import Loading from "../components/Loading";
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
 
-export default function NewsSection() {
+export default function WhookPage() {
   const { isLoading, list, targetRef } = useInfiniteScroll({
     fetchData: getMockData,
   });
 
   return (
-    <Article title="뉴스">
+    <Article title="Whook">
       {list && list.length === 0 && <Empty />}
       {list && list.length > 0 && (
         <ChartList>
           {list?.map((item, i) => (
-            <ChartItem
-              key={item.productId}
-              product={item}
-              index={i}
-              onClick={() => alert(123)}
-            />
+            <ChartItem key={item.productId} product={item} index={i} />
           ))}
         </ChartList>
       )}
