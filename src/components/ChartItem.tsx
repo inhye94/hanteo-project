@@ -32,6 +32,7 @@ export default function ChartItem({
         <img
           src={product.productImg ?? "/no-image.png"}
           alt={product.productName}
+          loading="lazy"
         />
       </ImageBox>
       <TextBox>

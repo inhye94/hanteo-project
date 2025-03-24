@@ -33,7 +33,11 @@ export default function PromotionCard({
         <BadgeWrapper>
           {promotion.state && <Badge>{promotion.state}</Badge>}
         </BadgeWrapper>
-        <PromotionImage src={promotion.imageSrc} alt={promotion.description} />
+        <PromotionImage
+          src={promotion.imageSrc}
+          alt={promotion.description}
+          loading="lazy"
+        />
       </ImageBox>
     </Card>
   );
