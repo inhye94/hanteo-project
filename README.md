@@ -20,9 +20,9 @@
 
 ### 작업 요약
 
-- stack: Vite, React, TypeScript, SCSS, PNPM, Swiper
-- 깃허브:
-- 배포링크:
+- stack: Vite, React, TypeScript, SCSS, Emotion, PNPM, Swiper
+- 깃허브: https://github.com/inhye94/hanteo-project
+- 배포링크: https://hanteo-project-report.vercel.app/
 
 ## 트러블 슈팅
 
