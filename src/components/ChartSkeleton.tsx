@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import "react-loading-skeleton/dist/skeleton.css";
 import { breakpoints } from "../constants/breakpoints";
 import { colors } from "../constants/colors";
 import ChartList from "./ChartList";
